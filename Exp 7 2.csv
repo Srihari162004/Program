@@ -1,0 +1,29 @@
+import pandas as pd
+import numpy as np
+
+# Set random seed for reproducibility
+np.random.seed(42)
+
+# Generate sample data
+n_samples = 100
+data = {
+    'age': np.random.randint(29, 78, n_samples),  # Ages between 29 and 77
+    'gender': np.random.choice([0, 1], n_samples),  # 0: female, 1: male
+    'cp': np.random.choice([0, 1, 2, 3], n_samples),  # Chest pain types
+    'exang': np.random.choice([0, 1], n_samples),  # Exercise-induced angina
+    'restecg': np.random.choice([0, 1, 2], n_samples),  # ECG results
+    'chol': np.random.randint(100, 601, n_samples),  # Cholesterol levels
+    'heartdisease': np.random.choice([0, 1], n_samples)  # Heart disease presence
+}
+
+# Create DataFrame
+df = pd.DataFrame(data)
+
+# Introduce some missing values ('?')
+for col in ['age', 'chol', 'restecg']:
+    mask = np.random.choice([True, False], size=n_samples, p=[0.1, 0.9])
+    df.loc[mask, col] = '?'
+
+# Save to CSV
+df.to_csv('Exp 7.csv', index=False)
+print("Sample dataset 'Exp 7.csv' created.")
