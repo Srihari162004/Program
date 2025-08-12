@@ -27,4 +27,12 @@ travel(Current, Goal, Visited, Path, D0, D) :-
     connected(Current, Next, Dist),
     \+ member(Next, Visited),  % avoid cycles
     D1 is D0 + Dist,
+
     travel(Next, Goal, [Next | Visited], Path, D1, D).
+    output:
+    ?-[route].
+    true
+    ?-route("gardon","kansa_city",D).
+    D=130;
+    D=620;
+    false.
