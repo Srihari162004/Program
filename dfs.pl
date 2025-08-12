@@ -22,3 +22,11 @@ depthfirst(Path, Node, Sol) :-
     s(Node, Node1),
     \+ member(Node1, Path),  % avoid cycles
     depthfirst([Node | Path], Node1, Sol).
+
+output:
+?-[file name].
+true
+?- solve(a,path).
+path=[g,f,e,b,a].
+?-depthfirst2(a,path,s).
+path=[a,b,e,f,g].
