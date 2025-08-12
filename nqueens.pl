@@ -17,3 +17,9 @@ safe_queens([Q|Qs], Q0, D0) :-
     abs(Q0 - Q) #\= D0,
     D1 #= D0 + 1,
     safe_queens(Qs, Q0, D1).
+
+output:
+?- [file name]
+true
+?- queens(8,Qs).
+Qs=[1,5,8,6,3,7,2,4]
