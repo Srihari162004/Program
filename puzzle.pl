@@ -59,3 +59,8 @@ move(state(A,B,C,D,E,F,G,*,J), state(A,B,C,D,*,F,G,E,J), up).
 move(state(A,B,C,D,E,F,G,*,J), state(A,B,C,D,E,F,G,J,*), right).
 move(state(A,B,C,D,E,F,G,H,*), state(A,B,C,D,E,*,G,H,F), up).
 move(state(A,B,C,D,E,F,G,H,*), state(A,B,C,D,E,F,G,*,H), left).
+
+output:
+?-[file name].
+true
+?-ids.
